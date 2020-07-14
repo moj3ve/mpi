@@ -16,4 +16,4 @@ An all-in-one ``make`` script for tweak compiling.
 4- Run!
 
 # Found a bug?
-Create an **issue**.
+Create an [Issue](https://github.com/samoht9277/mpi/issues)
