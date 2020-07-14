@@ -1,0 +1,84 @@
+#!/bin/bash
+
+#  mpi.
+#
+#  Created by Tomi Casarande on 14/07/2020.
+#  Copyright © 2020 Tomi Casagrande. All rights reserved.
+
+# Colors.
+NC='\033[0m'                            # No Color.
+
+VI='\033[0;95m'                         # Violet.
+YE='\033[1;93m'                         # Yellow.
+CYA='\033[0;96m'                        # Cyan.
+GR='\033[0;32m'                         # Green.
+BAD='\033[0;91m'                        # Strong red. For errors.
+
+echo ""
+echo -e "Which ${VI}tweak${NC} do you want to compile?"
+echo ""
+
+cd /Users/tomicasagrande/tweaks
+
+echo -e "Tweaks: ${YE} $(ls -m) ${NC}"
+
+read -p "Please, select one: " INPUT
+echo ""
+
+if [[ -d ./"$INPUT" && "$INPUT" != "" ]]; then
+
+    cd $INPUT
+    
+    echo "What do you want to do?"
+    echo -e "${CYA}[-i]${NC} = Compile and install."
+    echo -e "${CYA}[-c]${NC} = Only compile."
+    echo -e "${CYA}[-clean]${NC} = Compile a clean package."
+    echo -e "${CYA}[-fp]${NC} = Compile a final package package."
+    echo ""
+    
+    read -p "${INPUT} -" installation
+
+        case $installation in
+
+        i)
+        echo ""
+        echo -e "${CYA}==>${NC} Compiling and Installing ${GR}${INPUT}${NC}..."
+        echo ""
+        make package install
+        ;;
+            
+        c)
+        echo ""
+        echo -e "${CYA}==>${NC} Making ${GR}${INPUT}${NC}..."
+        echo ""
+        make package
+        ;;
+            
+        clean)
+        echo ""
+        echo -e "${CYA}==> ${NC}Making clean ${GR}${INPUT}${NC}..."
+        echo ""
+        make package clean
+        ;;
+            
+        fp)
+        echo ""
+        echo -e "${CYA}==> ${NC}Making final package ${GR}${INPUT}${NC}"
+        echo ""
+        make package FINALPACKAGE=1
+        ;;
+            
+        *)
+        echo ""
+        echo -e "${BAD}No argument. Stop.${NC}"
+        exit
+        echo ""
+        ;;
+
+        esac
+    
+else
+    echo -e "${BAD}No such directory. Stop.${NC}"
+    exit
+    echo ""
+fi
