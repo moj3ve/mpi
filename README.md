@@ -9,8 +9,11 @@ An all-in-one ``make`` script for tweak compiling.
 
 3- Now, put the script in the following directory:
 
-·**for macOS**: /usr/local/bin
+· **for macOS**: /usr/local/bin
 
-·**for WSL/Cygwin (probabbly the same for linux)**: /usr/bin
+· **for Linux/WSL/Cygwin/macOS without SIP**: /usr/bin
 
 4- Run!
+
+# Found a bug?
+Create an **issue**.
