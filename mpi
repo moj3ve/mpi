@@ -33,7 +33,7 @@ if [[ -d ./"$INPUT" && "$INPUT" != "" ]]; then
     echo -e "${CYA}[-i]${NC} = Compile and install."
     echo -e "${CYA}[-c]${NC} = Only compile."
     echo -e "${CYA}[-clean]${NC} = Compile a clean package."
-    echo -e "${CYA}[-fp]${NC} = Compile a final package package."
+    echo -e "${CYA}[-fp]${NC} = Compile a final package."
     echo ""
     
     read -p "${INPUT} -" installation
