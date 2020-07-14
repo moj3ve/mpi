@@ -18,7 +18,7 @@ echo ""
 echo -e "Which ${VI}tweak${NC} do you want to compile?"
 echo ""
 
-cd /Users/tomicasagrande/tweaks
+cd //PATH//TO//FOLDER
 
 echo -e "Tweaks: ${YE} $(ls -m) ${NC}"
 
