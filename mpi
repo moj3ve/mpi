@@ -6,7 +6,7 @@
 #  Copyright © 2020 Tomi Casagrande. All rights reserved.
 
 # Colors.
-RST='\033[0m'                           # No Color Reset.
+RST='\033[0m'                           # No Color, Reset.
 
 VI='\033[0;95m'                         # Violet.
 YE='\033[1;93m'                         # Yellow.
@@ -18,7 +18,7 @@ echo ""
 echo -e "Which ${VI}tweak${RST} do you want to compile?"
 echo ""
 
-cd /Users/tomicasagrande/tweaks
+cd /path/to/tweak                       # <-- Change this.
 
 echo -e "Tweaks: ${YE} $(ls -m) ${RST}"
 
